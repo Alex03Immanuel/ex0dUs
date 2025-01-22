@@ -44,6 +44,7 @@ for pswd in pswd_lst:
 	    time.sleep(0.1)
 	    #pswd = pswd_lst[x].rstrip('\n')
 	    cmd = stm + " " + U_name + " " + "password" + " " +  " \"" + pswd + "\""
+	    print( "trying " + pswd)
 	    os.system(cmd)
 	    time.sleep(0.01)        
     except OSError:
