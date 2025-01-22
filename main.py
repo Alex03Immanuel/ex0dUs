@@ -21,12 +21,11 @@ banner = """
 
 
 
-_____BRUTEFORCER STARTING_____		
+_____BRUTEFORCER STARTING_____
 
-								
-								
-								
-								  \n """ 
+
+
+\n """ 
 								
 for i in banner:
     sys.stdout.write(i)
@@ -43,14 +42,12 @@ for pswd in pswd_lst:
 
     try:
 	    time.sleep(0.1)
-	    pswd = pswd_lst[x].rstrip('\n')
-	    cmd = stm +" "+ U_name+" " + "password" +" " +  " \"" + pswd + "\""
-        os.system(cmd)
-        time .sleep(0.01)
-        
-    except Exception as e:
-        print(" +++ == AN ERROR OCCURED == +++")
-        print(f"{e}")
+	    #pswd = pswd_lst[x].rstrip('\n')
+	    cmd = stm + " " + U_name + " " + "password" + " " +  " \"" + pswd + "\""
+	    os.system(cmd)
+	    time.sleep(0.01)        
+    except OSError:
+        print("+++ == AN ERROR OCCURED == +++")
         break
 
 end_msg = " ___ BRUTEFORCE completed ___"
@@ -60,6 +57,11 @@ for i in end_msg:
     sys.stdout.flush()
     sys.sleep(0.05)
     
+
+
+
+
+
 
 
 
