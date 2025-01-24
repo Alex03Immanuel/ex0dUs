@@ -1,7 +1,9 @@
 #!/usr/bin/python3
 
 
-# //////////// need to implement CLI VERSION //////////////
+# //////////// trying alternate //////////////
+
+# /////////// i fucked up big time //////////
 
 
 import sys
@@ -58,9 +60,12 @@ for pswd in pswd_lst:
     count += 1
     
     try:
+	    pswd = f"\"{pswd}\""
+
 	    cmd = (f"nmcli device wifi connect {ssid} password {pswd}")
 	    #cmd = ['nmcli', 'device', 'wifi', 'connect', ssid, 'password', pswd]
-	    result = subprocess.run(str(cmd), stdout=subprocess.PIPE, stderr=subprocess.PIPE, text=True)
+	    #result = subprocess.run(cmd, stdout=subprocess.PIPE, stderr=subprocess.PIPE, text=True)
+
 
 	    print("trying : " + pswd)
 	    
