@@ -38,7 +38,7 @@ _____BRUTEFORCER STARTING_____
 for i in banner:
     sys.stdout.write(i)
     sys.stdout.flush()
-    time.sleep(0.05)
+    time.sleep(0.5)
     
 time.sleep(0.02)
 								
