@@ -1,8 +1,5 @@
 #!/usr/bin/python3
 
-
-# //////////// trying alternate //////////////
-
 # ////////// works for now ///////////////
 
 # ////////// needs keyboard interupts ///////
@@ -97,6 +94,7 @@ for i in end_msg:
 
 
 
+# The comment i have given below is not a mistake i intend to keep this comment forever for personal reasons
 
 
 # Nadeem's comment
