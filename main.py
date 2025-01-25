@@ -3,8 +3,11 @@
 
 # //////////// trying alternate //////////////
 
-# /////////// i fucked up big time //////////
+# ////////// works for now ///////////////
 
+# ////////// needs keyboard interupts ///////
+
+# ////////// needs more visual effects ///////
 
 import sys
 import os
@@ -12,7 +15,7 @@ import time
 import subprocess
 flag = False
 
-#os.system("nmcli device wifi")
+os.system("nmcli device wifi")
 
 print("___ Enter the SSID ___ \n")
 ssid_in = input("SSID:")
@@ -22,7 +25,7 @@ ssid = f"\"{ssid_in}\""
 #os.system("sudo systemctl isolate multi-user.target")
 
 def pas():
-	os.chdir('/home/alex/Documents/Hacking')
+#	os.chdir('/home/alex/Documents/Hacking')
 	with open ("passwords.txt","r") as f :
 		for line in f:
 		    yield line.strip()
@@ -41,7 +44,7 @@ _____BRUTEFORCER STARTING_____
 for i in banner:
     sys.stdout.write(i)
     sys.stdout.flush()
-    time.sleep(0.2)
+    time.sleep(0.05)
     
 time.sleep(0.02)
 								
@@ -97,7 +100,7 @@ for i in end_msg:
 
 
 
-
+# Nadeem's comment
 
 
 
