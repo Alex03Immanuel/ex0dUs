@@ -25,11 +25,13 @@ def pas():
 
 banner = """
 
+  _   _   _   _   _   _   _   _   _   _   _   _   _   _   _   _   _   _   _   _
+
+           |   E   |   X   |   O   |   D   |   U   |   S   |
+  _   _   _   _   _   _   _   _   _   _   _   _   _   _   _   _   _   _   _   _ 
 
 
-
-_____BRUTEFORCER STARTING_____
-
+  >>> EXODUS STARTING <<<
 
 
 \n """ 
@@ -37,7 +39,7 @@ _____BRUTEFORCER STARTING_____
 for i in banner:
     sys.stdout.write(i)
     sys.stdout.flush()
-    time.sleep(0.05)
+    time.sleep(0.01)
     
 time.sleep(0.02)
 								
