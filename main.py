@@ -2,8 +2,6 @@
 
 # ////////// works for now ///////////////
 
-# ////////// needs more visual effects ///////
-
 import sys
 import os
 import time
