@@ -2,14 +2,13 @@
 
 # ////////// works for now ///////////////
 
-# ////////// needs keyboard interupts ///////
-
 # ////////// needs more visual effects ///////
 
 import sys
 import os
 import time
 import subprocess
+from colorama import Fore, Style, init
 
 os.system("nmcli device wifi")
 
@@ -18,23 +17,19 @@ ssid_in = input("SSID:")
 ssid = f"\"{ssid_in}\""
 
 def pas():
-
 	with open ("passwords.txt","r") as f :
 		for line in f:
 		    yield line.strip()
+banner = f"""
+{Fore.BLUE}  _   _   _   _   _   _   _   _   _   _   _   _   _   _   _   _   _   _   _   _  
 
-banner = """
+       {Fore.GREEN}|   {Fore.CYAN}E   {Fore.GREEN}|   {Fore.CYAN}X   {Fore.GREEN}|   {Fore.CYAN}O   {Fore.GREEN}|   {Fore.CYAN}D   {Fore.GREEN}|   {Fore.CYAN}U   {Fore.GREEN}|   {Fore.CYAN}S   {Fore.GREEN}|  
+{Fore.BLUE}  _   _   _   _   _   _   _   _   _   _   _   _   _   _   _   _   _   _   _   _  
 
-  _   _   _   _   _   _   _   _   _   _   _   _   _   _   _   _   _   _   _   _
+  {Fore.YELLOW}>>> {Fore.MAGENTA}EXODUS STARTING {Fore.YELLOW}<<<
 
-           |   E   |   X   |   O   |   D   |   U   |   S   |
-  _   _   _   _   _   _   _   _   _   _   _   _   _   _   _   _   _   _   _   _ 
-
-
-  >>> EXODUS STARTING <<<
-
-
-\n """ 
+{Fore.WHITE}
+\n"""
 								
 for i in banner:
     sys.stdout.write(i)
@@ -60,7 +55,7 @@ for pswd in pswd_lst:
 	    time.sleep(2)
 	    
 	    if (result == 0):
-	        print(f"Password Obtained {pswd}")
+	        print(f"{Fore.GREEN}{Style.BRIGHT}Password Obtained {pswd}")
 	        break
 	        
 	    else:
