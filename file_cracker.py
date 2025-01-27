@@ -66,7 +66,7 @@ def main():
     password_cracker(Dir,F_name)
     
 def passw():
-    os.chdir('/home/alex/Documents/Hacking')
+
     with open("passwords.txt", "r") as f:
         chunk_size = 1000
         while True:
