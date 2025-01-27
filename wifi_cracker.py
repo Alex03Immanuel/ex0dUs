@@ -8,16 +8,24 @@ import time
 import subprocess
 from colorama import Fore, Style, init
 
+# display all the wifi details available
+
 os.system("nmcli device wifi")
+
+# enter the ssid
 
 print("___ Enter the SSID ___ \n")
 ssid_in = input("SSID:")
 ssid = f"\"{ssid_in}\""
 
+# reads each line from the password file 
+
 def pas():
 	with open ("passwords.txt","r") as f :
 		for line in f:
 		    yield line.strip()
+# banner display
+
 banner = f"""
 {Fore.BLUE}  _   _   _   _   _   _   _   _   _   _   _   _   _   _   _   _   _   _   _   _  
 
@@ -37,6 +45,8 @@ for i in banner:
 time.sleep(0.02)
 								
 pswd_lst = pas()
+
+# bruteforcer
 
 for pswd in pswd_lst:
 
@@ -75,7 +85,6 @@ for i in end_msg:
 
 
 # The comment i have given below is not a mistake i intend to keep this comment forever for personal reasons
-
 
 # Nadeem's comment
 

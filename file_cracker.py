@@ -1,4 +1,13 @@
-#!/usr/bin/python3
+#/usr/bin/python3
+
+# THINGS TO DO !!!
+# Fore.RED change
+# File Locking check
+# Multi Threaded implementation
+# implement john the ripper
+# visual stuff
+# finally add comments
+
 
 import sys
 import time
