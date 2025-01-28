@@ -1,5 +1,9 @@
 #/usr/bin/python3
 
+# STATUS : NOT WORKING 
+
+# CURRENT WORK : encrypt and decrypt file in linux
+
 # THINGS TO DO !!!
 # Fore.RED change
 # File Locking check
@@ -33,14 +37,18 @@ def password_cracker(Dir,F_name):
     os.system(stm_2)
     
     proceed_ask = input("Do you wish to bruteforce the file? (yes/no)")
-    
+
+	# let us go with gpg file locking and unlocking
+
     if proceed_ask == "yes":
         pswd_lst = passw()
         x = 0
+	os.system(f"touch decrypted_file.txt")
+
         while x<10:
             time.sleep(0.5)
             pswd = pswd_lst[x].rstrip('\n')
-            cmd = "unar -p "+pswd +" "+F_name
+            cmd =  #/////////////////////////
             print(cmd)
             os.system(cmd)
             x += 1
