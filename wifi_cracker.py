@@ -54,7 +54,7 @@ for pswd in pswd_lst:
         continue
     
     try:
-	    pswd = f"\"{pswd}"
+	    pswd = f"\"{pswd}\""
 	    cmd = ['nmcli', 'device', 'wifi', 'connect', ssid, 'password', pswd]
 	    result = subprocess.run(cmd, stdout=subprocess.PIPE, stderr=subprocess.PIPE, text=True)
 
