@@ -2,11 +2,10 @@
 
 # STATUS : WORKING
 
-# CURRENT WORK : encrypt and decrypt file in linux
+# CURRENT WORK : refinement and banners
 
 # THINGS TO DO !!!
-# Fore.RED change
-# File Locking check
+
 # Multi Threaded implementation
 # implement john the ripper
 # visual stuff
