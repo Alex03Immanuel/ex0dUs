@@ -1,6 +1,6 @@
 #/usr/bin/python3
 
-# STATUS : NOT WORKING 
+# STATUS : WORKING
 
 # CURRENT WORK : encrypt and decrypt file in linux
 
@@ -20,10 +20,9 @@ import threading
 from colorama import Style, Fore
 
 class BruteForceCracker:
-    def __init__(self, Dir, F_name, error):
+    def __init__(self, Dir, F_name):
         self.Dir = Dir
         self.F_name = F_name
-        self.error = error
         
         for run in banner:
             sys.stdout.write(run)
@@ -33,7 +32,7 @@ class BruteForceCracker:
 def password_cracker(Dir,F_name):
     
     os.chdir(Dir)
-    stm_2 = 'cat '+F_name
+    stm_2 = f"cat {F_name}"
     os.system(stm_2)
     
     proceed_ask = input("Do you wish to bruteforce the file? (yes/no)")
@@ -43,14 +42,21 @@ def password_cracker(Dir,F_name):
     if proceed_ask == "yes":
         pswd_lst = passw()
         x = 0
-	os.system(f"touch decrypted_file.txt")
+	# os.system(f"touch decrypted_file.txt")
 
-        while x<10:
-            time.sleep(0.5)
+        while True:
+            #time.sleep(0.5)
             pswd = pswd_lst[x].rstrip('\n')
-            cmd =  #/////////////////////////
-            print(cmd)
-            os.system(cmd)
+            cmd = f"gpg --decrypt --batch --yes --passphrase {pswd} {F_name}"
+            print(Fore.RED)
+            print(f"Trying - {pswd}")
+            print(Fore.WHITE)
+            result = os.system(cmd)
+
+            if(result == 0):
+                print(Fore.GREEN)
+                print(f"Correct password is {pswd}")
+                break
             x += 1
         
     elif proceed_ask == "no":
@@ -65,12 +71,9 @@ def password_cracker(Dir,F_name):
         password_cracker(Dir,F_name)
     
 def main():
-
-    print(Fore.RED)
     Dir = input("Enter the Directory: ")
-    F_name = input("Enter Filename: ")  
-    error = input("Enter Wrong Password Error Message: ")
-    cracker = BruteForceCracker(Dir, F_name, error)
+    F_name = input("Enter Filename: ")
+    cracker = BruteForceCracker(Dir, F_name)
     password_cracker(Dir,F_name)
     
 def passw():
@@ -82,6 +85,15 @@ def passw():
             return passwords
 
 if __name__ == '__main__':
+    
     banner = "Loading...\n"
-    print(banner)
+    print(Fore.RED)
+    
+    for i in banner:
+        sys.stdout.write(i)
+        sys.stdout.flush()
+        time.sleep(0.02)
+
+    print(Fore.WHITE)
+
     main()
