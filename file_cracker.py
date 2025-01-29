@@ -1,6 +1,6 @@
 #/usr/bin/python3
 
-# STATUS : NOT WORKING
+# STATUS : WORKING
 
 # CURRENT WORK : encrypt and decrypt file in linux
 
@@ -45,11 +45,19 @@ def password_cracker(Dir,F_name):
 	# os.system(f"touch decrypted_file.txt")
 
         while True:
-            time.sleep(0.5)
+            #time.sleep(0.5)
             pswd = pswd_lst[x].rstrip('\n')
             cmd = f"gpg --decrypt --batch --yes --passphrase {pswd} {F_name}"
-            print(cmd)
-            os.system(cmd)
+            print(Fore.RED)
+            print(f"Trying - {pswd}")
+            print(Fore.WHITE)
+            result = os.system(cmd)
+
+            if(result == 0):
+                print(Fore.GREEN)
+                print(f"Correct password is {pswd}")
+                break
+            x += 1
         
     elif proceed_ask == "no":
         banner = "------Thank you for using Brute-Forcer------\n" 
