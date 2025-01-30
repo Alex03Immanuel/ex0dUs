@@ -53,9 +53,20 @@ def password_cracker(Dir,F_name):
             result = os.system(cmd)
 
             if(result == 0):
+                print(Fore.BLUE)
+                print(f"Correct password is : \n")
                 print(Fore.GREEN)
-                print(f"Correct password is {pswd}")
+                print(f"{pswd} \n")
+
+
+                out_msg = "--------Thank you for using Brute-Forcer --------"
+
+                for _ in out_msg:
+                    sys.stdout.write(_)
+                    sys.stdout.flush()
+                    time.sleep(0.03)
                 break
+            
             x += 1
         
     elif proceed_ask == "no":
@@ -85,7 +96,7 @@ def passw():
 
 if __name__ == '__main__':
     
-    banner = "Loading...\n"
+    banner = "-------- Loading... -------- \n"
     print(Fore.RED)
     
     for i in banner:
