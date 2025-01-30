@@ -2,7 +2,7 @@
 
 # STATUS : WORKING
 
-# CURRENT WORK : refinement and banners
+# CURRENT WORK : multi threading
 
 # THINGS TO DO !!!
 
