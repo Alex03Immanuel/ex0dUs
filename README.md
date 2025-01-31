@@ -11,17 +11,25 @@ i gotcha .. the "wifi_cracker.py" is designed to display the available wifi (inc
 
 moving on ....
 
-Got a file which happened to be gpg encrypted with a password and you just cannot remember the simple password your smooth brained self kept and youre not good enough to read all asian languages ? 
+Do you have a file which happened to be gpg encrypted with a password and you just cannot remember the simple password your smooth brained self kept and youre not good enough to read encrypted asian languages and desperately need to know what 
 
-well well well .. would you look at that as expected " i got you !!" 
+"�
+	
+}7(݄���\t�����IF�.D
+��J�skƫ��N|�޵s�%/�.
+Kɑ�(�c��������Á�.MC�h��ŕ�!��i�Ch�A��ZS�<%V/�׍" 
+
+means ? 
+
+well well well .. would you look at that .. as expected " i got you !!" 
 
 "file_cracker.py" is used to try all possible commonly used passwords to decrypt the file from .. you guessed it .. "passwords.txt"
 
-Not that good of a project is it ?
+WHAT ? That's it ?
 
 well love .. fear not that is not it !!!
 
-1. i''m trying to implement multi-threading to speed up the process because you're lazy and hate waiting (i get you trust me i have ADHD too)
+1. i'm trying to implement multi-threading to speed up the process because you're lazy and hate waiting (i get it .. trust me i have ADHD too)
 2. i'm going to use hydra to crack passwords to make it a bit more interesting 
 
 That's All Folks for now .. i'm using python becuase you're better 
