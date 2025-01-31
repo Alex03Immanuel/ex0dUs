@@ -3,7 +3,7 @@
   <h4> Why the name ?? - Deal with it LOL </h4>  
 </div>
 
-Before you pour out your comments and ... HOLD YOUR HORSES LOVE it aint complete there is obviously some changes coming up ...
+Before you pour out your comments ... HOLD YOUR HORSES LOVE it aint complete there is obviously some changes coming up ...
 
 ex0dUs was designed to bruteforce sites through URLs .. oh wait you got no internet ?
 
