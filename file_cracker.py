@@ -2,7 +2,7 @@
 
 # STATUS : WORKING
 
-# CURRENT WORK : multi threading
+# CURRENT WORK : MAKE HYDRA WORK
 
 # THINGS TO DO !!!
 
